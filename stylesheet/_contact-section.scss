@@ -1,0 +1,131 @@
+.contact-section {
+  width: 100%;
+  height: auto;
+  padding: 82px 0;
+  background: linear-gradient(
+    0deg,
+    rgba(64, 59, 221, 0.9),
+    rgba(64, 59, 221, 0.9)
+  );
+
+  .contact__inner {
+    @include double-layer;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 155px;
+    height: 100%;
+
+    @include respond(mini-laptop) {
+      grid-template-columns: 1fr;
+      gap: 50px 0;
+    }
+
+    .details-col {
+      @include column;
+      justify-content: center;
+      align-items: flex-start;
+      color: $white;
+
+      .contact-header {
+        font-weight: 500;
+        font-size: calculate-rem(48px);
+        line-height: 55px;
+        color: inherit;
+        margin-bottom: 24px;
+
+        @include respond(max-laptop) {
+          font-size: calculate-rem(28px);
+          line-height: 1.5;
+        }
+      }
+      .contact-text {
+        font-weight: 300;
+        font-size: calculate-rem(18px);
+        line-height: 21px;
+        color: inherit;
+
+        @include respond(max-laptop) {
+          font-size: calculate-rem(14px);
+        }
+      }
+    }
+    .forms-col {
+      background: $white;
+      @include radius-5px;
+      height: 100%;
+      width: 100%;
+      padding: 36px 39px 36px 40px;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 24px 0;
+
+      @include respond(tab) {
+        padding: 20px 10px;
+      }
+
+      .inline-form-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 24px;
+
+        @include respond(mini-laptop) {
+          grid-template-columns: 1fr;
+          gap: 24px 0;
+        }
+      }
+
+      .contact-form {
+        background: #f7f7f7;
+        @include radius-5px;
+        outline: none;
+        border: none;
+        height: auto;
+        padding: 23px 10px 23px 24px;
+        @include placeholder($font-color);
+        @include transition;
+        font-weight: normal;
+        font-size: calculate-rem(16px);
+        line-height: 18px;
+        color: $font-color;
+
+        &:focus {
+          border: 1px solid $brand-color;
+        }
+      }
+
+      .textarea-form {
+        resize: none;
+        height: 175px;
+      }
+
+      .contact-form-button {
+        width: 266px;
+        height: 53px;
+        background: rgba(64, 59, 221, 0.94);
+        @include radius-5px;
+        border: none;
+        outline: none;
+        color: $white;
+        font-weight: 300;
+        font-size: calculate-rem(18px);
+        line-height: 21px;
+        cursor: pointer;
+        @include transition;
+
+        &:hover {
+          box-shadow: 0px 15px 20px rgba(64, 59, 221, 0.5);
+          background: lighten($color: $brand-color, $amount: 5%);
+        }
+        &:active {
+          box-shadow: 0px 15px 20px rgba(64, 59, 221, 0.7);
+          background: lighten($color: $brand-color, $amount: 10%);
+        }
+
+        @include respond(tab) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

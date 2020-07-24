@@ -1,0 +1,29 @@
+.fonts-failed body {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.fonts-failed h1,
+.fonts-failed h2,
+.fonts-failed h3,
+.fonts-failed h4,
+.fonts-failed h5,
+.fonts-failed h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+@font-face {
+    font-family: 'Ubuntu';
+    font-style: normal;
+    font-weight: lighter;
+    src: url('/assets/fonts/Ubuntu-Light.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/assets/fonts/Ubuntu-Bold.ttf') format('truetype');
+  font-display: swap;
+}

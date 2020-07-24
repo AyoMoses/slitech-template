@@ -1,0 +1,262 @@
+.case-studies-wrap {
+  width: 100%;
+  height: auto;
+  padding-top: 73px;
+  padding-bottom: 82px;
+
+  & .case-studies__inner {
+    @include double-layer;
+
+    .services-header,
+    .services-main-header {
+      text-align: center;
+    }
+
+    .services-header {
+      font-weight: 300;
+      font-size: calculate-rem(14px);
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $font-color;
+    }
+    .services-main-header {
+      font-weight: 500;
+      font-size: calculate-rem(36px);
+      line-height: 41px;
+      text-align: center;
+      color: $font-color;
+      margin-top: 24px;
+      margin-bottom: 56px;
+
+      @include respond(tab) {
+        font-size: calculate-rem(25px);
+      }
+      @include respond(phone) {
+        font-size: calculate-rem(19px);
+      }
+    }
+  }
+
+  & .cards-wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    @include respond(tab) {
+      width: 1300px;
+    }
+
+    @include respond(max-laptop) {
+      width: 1400px;
+    }
+
+    .pagination-wrap {
+      margin-top: calc-em(64px);
+      width: 100%;
+      @include flex-row;
+
+      @include respond(max-laptop) {
+        display: none;
+      }
+
+      .dot {
+        width: 7px;
+        height: 7px;
+        @include flex-row;
+        @include border-radius(50%);
+        background: $deep-grey;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-right: calc-em(16px);
+        }
+      }
+      .active-dot {
+        width: 10px;
+        height: 10px;
+        background: $brand-color;
+      }
+    }
+
+    .cards__inner {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0 43px;
+      place-items: center;
+      height: 100%;
+      width: 100%;
+      position: relative;
+
+      @include respond(max-laptop) {
+        display: grid;
+        grid-template-columns: repeat(4, 320px);
+        gap: 0 8px;
+        overflow-x: scroll;
+        @include scrollbar-hide;
+        position: static;
+      }
+      @include respond(tab) {
+        position: static;
+      }
+
+      .arrow-button {
+        position: absolute;
+        top: 50%;
+        right: -37.5px;
+        background: $brand-color;
+        width: 72px;
+        height: 72px;
+        @include border-radius(50%);
+        @include flex-row;
+        @include transition;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        box-shadow: 0px 11px 25px rgba(64, 59, 221, 0.3);
+
+        &:hover {
+          box-shadow: 0px 15px 20px rgba(64, 59, 221, 0.7);
+          background: lighten($color: $brand-color, $amount: 5%);
+        }
+        &:active {
+          box-shadow: 0px 15px 20px rgba(64, 59, 221, 0.5);
+          background: lighten($color: $brand-color, $amount: 10%);
+        }
+
+        .slide-arrow-icon {
+          width: 40px;
+          height: auto;
+        }
+
+        @include respond(max-laptop) {
+          display: none;
+        }
+      }
+    }
+
+    .card {
+      width: 100%;
+      height: auto;
+      @include transition;
+      background: #ffffff;
+      box-shadow: 0px 10px 22px rgba(62, 71, 106, 0.1);
+      @include radius-5px;
+      cursor: pointer;
+
+      &:hover {
+        .project-detail-wrap {
+          background: $brand-color;
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px;
+          border-bottom: none;
+
+          .project-name,
+          .project-detail {
+            color: $white;
+          }
+        }
+      }
+      @include respond(max-laptop) {
+        box-shadow: none;
+      }
+      @include respond(tab) {
+        &:hover {
+          box-shadow: none;
+        }
+      }
+
+      .card-image-wrap {
+        width: 100%;
+        height: 229px;
+        position: relative;
+        .card-image {
+          background: $font-color;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-top-right-radius: 5px;
+          border-top-left-radius: 5px;
+        }
+
+        // UNIQUE COLORS AND BG FOR CARDS
+        .type-ecommerce {
+          background: rgba(221, 220, 243, 0.94);
+          .ecommerce-text {
+            color: $brand-color;
+          }
+        }
+        .type-software {
+          background: #fbf8f0;
+          .software-text {
+            color: $font-accent;
+          }
+        }
+        .type-sass {
+          background: #f3e5fc;
+          .sass-text {
+            color: #bb59dd;
+          }
+        }
+        // UNIQUE COLORS AND BG FOR CARDS
+
+        .project-type {
+          position: absolute;
+          z-index: 5;
+          top: 24px;
+          right: 24px;
+          width: 149px;
+          height: 49px;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          -ms-border-radius: 5px;
+          -o-border-radius: 5px;
+
+          .project-type__text {
+            font-weight: normal;
+            font-size: calculate-rem(14px);
+            line-height: 16px;
+            @include flex-row;
+            height: 100%;
+          }
+        }
+      }
+
+      //   DETAIL UNIQUE BORDER COLORS STYLING
+      .ecommerce-detail {
+        border-bottom: 5px solid $brand-color;
+      }
+      .software-detail {
+        border-bottom: 5px solid $font-accent;
+      }
+      .sass-detail {
+        border-bottom: 5px solid #bb59dd;
+      }
+      //   DETAIL UNIQUE BORDER COLORS STYLING
+
+      .project-detail-wrap {
+        width: 100%;
+        padding: 28px 10px 22px 24px;
+        border-radius: 0 0 5px 5px;
+        -webkit-border-radius: 0 0 5px 5px;
+        -moz-border-radius: 0 0 5px 5px;
+        -ms-border-radius: 0 0 5px 5px;
+        -o-border-radius: 0 0 5px 5px;
+        .project-name {
+          font-weight: 500;
+          font-size: calculate-rem(24px);
+          line-height: 28px;
+          color: $font-color;
+          margin-bottom: calc-em(16px);
+        }
+        .project-detail {
+          font-weight: 300;
+          font-size: calculate-rem(16px);
+          line-height: 24px;
+          color: $font-color;
+        }
+      }
+    }
+  }
+}

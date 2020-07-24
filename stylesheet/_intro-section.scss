@@ -1,0 +1,60 @@
+// INTRO SECTION
+.introduction-wrap {
+  @include double-layer;
+
+  .intro-header-wrap {
+    width: max-content;
+    @include row;
+    align-items: center;
+    margin-bottom: calc-em(24px);
+
+    .intro-text {
+      font-weight: 300;
+      font-size: calculate-rem(14px);
+      line-height: 16px;
+      color: $font-color;
+    }
+  }
+
+  .intro__inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 56px;
+    padding-bottom: 79px;
+
+    @include respond(tab) {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px 0;
+      padding-bottom: 49px;
+    }
+
+    .intro__inner-header {
+      font-weight: 500;
+      font-size: calculate-rem(36px);
+      line-height: 41px;
+      color: $font-color;
+
+      @include respond(tab) {
+        font-size: calculate-rem(26px);
+      }
+    }
+
+    .intro-col {
+      color: $font-color;
+      width: 100%;
+
+      .intro-paragragh {
+        color: inherit;
+        font-weight: 300;
+        font-size: calculate-rem(16px);
+        line-height: 18px;
+        color: $font-color;
+
+        &:first-child {
+          margin-bottom: calc-em(15px);
+        }
+      }
+    }
+  }
+}

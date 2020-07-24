@@ -1,0 +1,136 @@
+// TESTIMONIAL SECTION
+.testimonial-wrap {
+  width: 100%;
+  height: auto;
+  background: $bg-grey;
+  padding-top: 73px;
+  padding-bottom: 82px;
+  .testimonial__inner {
+    @include double-layer;
+
+    .testimonial-header,
+    .testimonial-main-header {
+      text-align: center;
+    }
+
+    .testimonial-header {
+      font-weight: 300;
+      font-size: calculate-rem(14px);
+      line-height: 16px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $font-color;
+    }
+    .testimonial-main-header {
+      font-weight: 500;
+      font-size: calculate-rem(36px);
+      line-height: 41px;
+      text-align: center;
+      color: $font-color;
+      margin-top: 24px;
+      margin-bottom: 126px;
+
+      @include respond(tab) {
+        font-size: calculate-rem(25px);
+      }
+      @include respond(phone) {
+        font-size: calculate-rem(19px);
+      }
+    }
+
+    & .cards-wrapper {
+      width: 100%;
+      max-width: 100%;
+
+      @include respond(tab) {
+        width: 1300px;
+      }
+
+      @include respond(max-laptop) {
+        width: 1400px;
+      }
+
+      .cards__inner {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0 43px;
+        place-items: center;
+        height: 100%;
+        width: 100%;
+
+        @include respond(max-laptop) {
+          display: grid;
+          grid-template-columns: repeat(4, 320px);
+          gap: 0 8px;
+          overflow-x: scroll;
+          @include scrollbar-hide;
+        }
+      }
+
+      .card {
+        width: 100%;
+        height: 263px;
+        @include transition;
+        background: #ffffff;
+        box-shadow: 0px 10px 22px rgba(62, 71, 106, 0.1);
+        @include radius-5px;
+        cursor: pointer;
+        padding: 0 22px 36px 24px;
+
+        @include respond(max-laptop) {
+          height: auto;
+          box-shadow: none;
+        }
+
+        @include respond(tab) {
+          &:hover {
+            box-shadow: none;
+          }
+        }
+
+        .testimonial-image-wrap {
+          width: 100%;
+          @include flex-row;
+          .testimonial-image {
+            margin-bottom: 34px;
+            @include border-radius(50%);
+            width: 123px;
+            height: 123px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0px 10px 22px rgba(62, 71, 106, 0.4);
+            margin-top: -50px;
+
+            @include respond(max-laptop) {
+              margin-top: 30px;
+            }
+          }
+        }
+
+        .testimonial-name-wrap {
+          @include row;
+          align-items: center;
+          margin-bottom: 16px;
+          .testimonial-name {
+            font-weight: 500;
+            font-size: calculate-rem(18px);
+            line-height: 21px;
+            color: $font-color;
+          }
+          .testimonial-company {
+            font-weight: normal;
+            font-size: calculate-rem(12px);
+            line-height: 18px;
+            color: $font-accent;
+          }
+        }
+        .testimony {
+          font-weight: 300;
+          font-size: calculate-rem(13px);
+          line-height: 18px;
+          color: $font-color;
+        }
+      }
+    }
+  }
+}

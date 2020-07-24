@@ -1,0 +1,152 @@
+// FAQ SECTION
+.faq-section {
+  width: 100%;
+  max-width: calc(100% - 244px);
+  margin: 0 auto;
+  padding-bottom: 129px;
+  background: $white;
+
+  @include respond(tab) {
+    width: 100%;
+    max-width: calc(100% - 24px);
+    margin: 0 auto;
+    margin-top: 370px;
+  }
+  @include respond(phone) {
+    margin-top: 400px;
+  }
+
+  @include respond(sm-phone) {
+    margin-top: 450px;
+  }
+
+  .faq-header {
+    font-weight: 300;
+    font-size: calculate-rem(14px);
+    line-height: 16px;
+    text-transform: uppercase;
+    color: $font-color;
+    margin-bottom: 24px;
+  }
+  .faq-main-header {
+    font-weight: 500;
+    font-size: calculate-rem(36px);
+    line-height: 41px;
+    color: $font-color;
+    margin-bottom: 36px;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    @include respond(mini-laptop) {
+      font-size: calculate-rem(22px);
+    }
+  }
+
+  .faq-col-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 100px;
+
+    @include respond(tab) {
+      grid-template-columns: 1fr;
+      gap: 50px 0;
+    }
+
+    .faq-col {
+      width: 100%;
+      .accordion-wrap {
+        &:not(:last-child) {
+          margin-bottom: 24px;
+
+          @include respond(tab) {
+            margin-bottom: 15px;
+          }
+        }
+      }
+      .accordion {
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: 0px 5px 40px rgba(62, 71, 106, 0.15);
+        @include radius-5px;
+        color: $font-color;
+        cursor: pointer;
+        padding: 25px 30.95px 24px 24px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-style: normal;
+        font-weight: normal;
+        font-size: calculate-rem(18px);
+        line-height: 21px;
+
+        &:after {
+          content: url('/assets/icons/caret-up.svg');
+          float: right;
+        }
+
+        @include respond(mini-laptop) {
+          font-size: calculate-rem(12px);
+        }
+        @include respond(sm-phone) {
+          padding: 25px 15px 24px 10px;
+          font-size: calculate-rem(12px);
+        }
+      }
+
+      .active:after {
+        content: url('/assets/icons/caret-down.svg');
+      }
+
+      .accordion:hover {
+        background-color: rgba($color: $brand-color, $alpha: 0.5);
+        color: $white;
+
+        @include respond(tab) {
+          background: $brand-color;
+        }
+      }
+      .active {
+        background: $brand-color;
+        color: $white;
+        @include border-radius(5px 5px 0 0);
+      }
+
+      .panel {
+        padding: 24px 21px 26px 24px;
+        display: none;
+        background-color: $white;
+        overflow: hidden;
+        box-shadow: 0px 10px 22px rgba(62, 71, 106, 0.1);
+        border-radius: 0px 0px 5px 5px;
+        -webkit-border-radius: 0px 0px 5px 5px;
+        -moz-border-radius: 0px 0px 5px 5px;
+        -ms-border-radius: 0px 0px 5px 5px;
+        -o-border-radius: 0px 0px 5px 5px;
+      }
+    }
+    .faq-image-col {
+      background-image: url('/assets/icons/sec-icon.svg');
+      background-repeat: no-repeat;
+
+      .faq-image {
+        margin-left: 40px;
+        margin-top: 42px;
+        z-index: 5;
+        width: 100%;
+        max-width: 100%;
+        height: 400px;
+        object-position: center;
+        object-fit: cover;
+
+        @include respond(mini-laptop) {
+          font-size: calculate-rem(12px);
+        }
+        @include respond(tab) {
+          display: none;
+        }
+      }
+    }
+  }
+}
