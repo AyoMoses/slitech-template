@@ -3,6 +3,9 @@
   height: auto;
   padding-top: 73px;
   padding-bottom: 82px;
+  background: url('/assets/icons/Case-Study-Lines-2.svg') no-repeat,
+    url('/assets/icons/case-studies-line-1.svg') no-repeat;
+  background-position: 100% 60%, 0 30%;
 
   & .case-studies__inner {
     @include double-layer;

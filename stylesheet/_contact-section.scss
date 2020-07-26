@@ -7,6 +7,16 @@
     rgba(64, 59, 221, 0.9),
     rgba(64, 59, 221, 0.9)
   );
+  position: relative;
+  z-index: 5;
+
+  &::after {
+    position: absolute;
+    content: url('/assets/icons/Contact-Section-Lines.svg');
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+  }
 
   .contact__inner {
     @include double-layer;

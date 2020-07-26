@@ -5,8 +5,23 @@
   background: $bg-grey;
   padding-top: 73px;
   padding-bottom: 82px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    content: url('/assets/icons/Testimonial BG Pattern.svg');
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
   .testimonial__inner {
     @include double-layer;
+    z-index: 2;
 
     .testimonial-header,
     .testimonial-main-header {
@@ -41,6 +56,8 @@
     & .cards-wrapper {
       width: 100%;
       max-width: 100%;
+      z-index: 2;
+      position: relative;
 
       @include respond(tab) {
         width: 1300px;
